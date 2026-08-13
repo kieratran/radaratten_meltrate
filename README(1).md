@@ -1,6 +1,6 @@
 # Ice-Penetrating Radar Attenuation & Basal Melt Rate Calculation
 
-MATLAB scripts for estimating ice-penetrating radar attenuation rates and converting them to basal melt rates using a 1.5D thermal model (D. Yang).
+MATLAB scripts for estimating ice-penetrating radar attenuation rates and converting them to basal melt rates using a 1.5D thermal model.
 
 **Author:** Kiera Tran
 
