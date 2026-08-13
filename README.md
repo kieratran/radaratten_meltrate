@@ -14,7 +14,7 @@ Run in this order:
 ## Requirements
 
 - MATLAB (tested version not specified — update this line with your version)
-- Custom function library in `~/Ross_projects` (referenced via `addpath(genpath(...))` in `attenuation_calculation.m`), including at minimum:
+- Custom function library in `~/Ross_projects/functions` (referenced via `addpath(genpath(...))` in `attenuation_calculation.m`), including at minimum:
   - `geo_correction`
   - `piecewise_fit`
   - `smoothn`
