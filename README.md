@@ -38,6 +38,7 @@ Loads a `.mat` file (`radar_data.mat` by default) containing:
 | `time` | Fast-time sample vector |
 | `lat`, `lon` | Along-track coordinates |
 | `plane_elevation` | Aircraft/platform elevation |
+| `surfTime` | Surface returned time |
 
 ### `melt_calculation.m`
 Loads `Model_inputs.mat` containing:
@@ -57,14 +58,6 @@ It then loads `Attenuation` and `Attenuation_unc` (the output of `attenuation_ca
 
 - `attenuation_calculation.m` produces `Attenuation` and `Attenuation_unc` (mean depth-resolved attenuation rate and uncertainty per trace).
 - `melt_calculation.m` produces a `MeltRate` struct with mean (`.mu`) and uncertainty (`.unc`) fields for both Siple Dome (`.SD`) and Taylor Dome (`.TD`) ice chemistry assumptions.
-
-## Known issues (fix before running)
-
-- `attenuation_calculation.m`: `surfTime` is used in `geo_correction(...)` but never loaded from `radar_data.mat` — define or load it.
-- `attenuation_calculation.m`: the elevation-conversion loop (Section 5) references `Lat{n}` and `idx(nn)`, which aren't defined elsewhere in the script.
-- `attenuation_calculation.m`: `elev(i)` is used once instead of `plane_elevation(i)` — likely a naming inconsistency.
-- `melt_calculation.m`: the waitbar update references `pct`, which is never defined (probably meant `n / totalPoints`).
-- `melt_calculation.m`: Section 3 references `data.Attenuation` (with a `data.` prefix) instead of the `Attenuation` variable loaded directly above it.
 
 ## Notes
 
